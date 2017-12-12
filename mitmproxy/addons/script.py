@@ -190,14 +190,14 @@ class Script:
 
     def configure(self, options, updated):
         self.last_options = options
-        if not self.observer:
-            self.observer = polling.PollingObserver()
-            # Bind the handler to the real underlying master object
-            self.observer.schedule(
-                ReloadHandler(self.reload),
-                os.path.dirname(self.path) or "."
-            )
-            self.observer.start()
+#        if not self.observer:
+#            self.observer = polling.PollingObserver()
+#            # Bind the handler to the real underlying master object
+#            self.observer.schedule(
+#                ReloadHandler(self.reload),
+#                os.path.dirname(self.path) or "."
+#            )
+#            self.observer.start()
         self.run("configure", options, updated)
 
     def done(self):
